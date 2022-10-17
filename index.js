@@ -124,7 +124,7 @@ function verifyToken(req, resp, next) {                                         
     if (token)                                                                  //it checks if there is some token
     {
         token = token.split(' ')[1];                                            //we have added bearer word before actual token in postman header so now we have to collect only that token so split will split whole arrya into two arryas on the basis of space we have added in bearer and actual token + we are acessing 2nd index that split has created this is actual token so thats why [1]
-        
+
         // console.warn('middleware called', token);                            //just for checking middleware is working or not
 
         Jwt.verify(token, jwtKey, (err, valid) => {                             //to verify token there is .verify function fisrt param is token 2nd is that key 3rd is call back function
